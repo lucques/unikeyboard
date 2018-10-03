@@ -23,18 +23,18 @@ partial modifier_keys xkb_symbols "modifiers" {
     };
     key <RWIN> {
         type[Group1] = "ONE_LEVEL",
-        symbols[Group1] = [ ISO_Level3_Shift ]
+        symbols[Group1] = [ ISO_Level5_Shift ]
     };
 
 
     key <RCTL> {
         type[Group1]="ONE_LEVEL",
-        symbols[Group1] = [ ISO_Level5_Shift ]
+        symbols[Group1] = [ ISO_Level3_Shift ]
     };
 
     key <CAPS> {
         type[Group1] = "ONE_LEVEL",
-        symbols[Group1] = [ ISO_Level5_Shift ]
+        symbols[Group1] = [ ISO_Level3_Shift ]
     };
 
 
@@ -121,9 +121,9 @@ xkb_symbols "basis" {
     	symbols[Group1] = [ 0,                       parenright,              braceright,              U2046,                  notequal,                approxeq,                 identical,               emptyset                 ] };
 
     key <AE11> {
-    	symbols[Group1] = [ minus,                   underscore,              backslash,               U1E9E,                  U207A,                   U207B,                    hyphen,                  NoSymbol                 ] };
+    	symbols[Group1] = [ minus,                   underscore,              ssharp,                  U1E9E,                  U207A,                   U207B,                    hyphen,                  NoSymbol                 ] };
     key <AE12> {
-    	symbols[Group1] = [ equal,                   plus,                    dead_macron,             dead_diaeresis,         dead_cedilla,            dead_abovering,          dead_dasia,               dead_belowdot            ] };
+    	symbols[Group1] = [ equal,                   plus,                    dead_acute,              dead_grave,             dead_cedilla,            dead_abovering,          dead_dasia,               dead_belowdot            ] };
 
     // Top row
     // --------------------------------------------------------------
