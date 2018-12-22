@@ -6,37 +6,47 @@
 partial modifier_keys xkb_symbols "modifiers" {
     //include "level5(modifier_mapping)"
 
-    // Swap Alt_L, Super_L
-    key <LALT> {
-        type[Group1]="ONE_LEVEL",
-        symbols[Group1] = [ Super_L ]
-    };
+    // LWIN -> Alt_L
     key <LWIN> {
         type[Group1] = "ONE_LEVEL",
         symbols[Group1] = [ Alt_L ]
     };
 
-    // Swap Alt_R, Super_R
+    // LALT -> Super_L
+    key <LALT> {
+        type[Group1]="ONE_LEVEL",
+        symbols[Group1] = [ Super_L ]
+    };
+
+    // RALT -> Super_R
     key <RALT> {
         type[Group1]="ONE_LEVEL",
         symbols[Group1] = [ Super_R ]
     };
+
+    // RWIN, PRSC -> Alt_R
+    // RWIN for standard keyboard
+    // PRSC for Thinkpad keyboard
     key <RWIN> {
         type[Group1] = "ONE_LEVEL",
+        symbols[Group1] = [ Alt_R ]
+    };
+    key <PRSC> {
+        type[Group1] = "PC_ALT_LEVEL2",
+        symbols[Group1] = [ Alt_R ]
+    };
+
+    // RCTL -> ISO_Level5_Shift
+    key <RCTL> {
+        type[Group1]="ONE_LEVEL",
         symbols[Group1] = [ ISO_Level5_Shift ]
     };
 
-
-    key <RCTL> {
-        type[Group1]="ONE_LEVEL",
-        symbols[Group1] = [ ISO_Level3_Shift ]
-    };
-
+    // CAPS -> ISO_Level3_Shift
     key <CAPS> {
         type[Group1] = "ONE_LEVEL",
         symbols[Group1] = [ ISO_Level3_Shift ]
     };
-
 
     modifier_map Mod5 { ISO_Level3_Shift };
     modifier_map Mod3 { ISO_Level5_Shift };
@@ -123,7 +133,7 @@ xkb_symbols "basis" {
     key <AE11> {
     	symbols[Group1] = [ minus,                   underscore,              ssharp,                  U1E9E,                  U207A,                   U207B,                    hyphen,                  NoSymbol                 ] };
     key <AE12> {
-    	symbols[Group1] = [ equal,                   plus,                    dead_acute,              dead_grave,             dead_cedilla,            dead_abovering,          dead_dasia,               dead_belowdot            ] };
+    	symbols[Group1] = [ equal,                   plus,                    dead_acute,              dead_grave,             dead_cedilla,            dead_abovering,           NoSymbol,               dead_belowdot            ] };
 
     // Top row
     // --------------------------------------------------------------
@@ -135,12 +145,12 @@ xkb_symbols "basis" {
     key <AD03> {
     	symbols[Group1] = [ e,                       E,                       Greek_epsilon,           EuroSign,                U2208,                   U2209,                   U2286,                   U228A                 ] };
     key <AD04> {
-    	symbols[Group1] = [ r,                       R,                       Greek_rho,               U03F1,                   U211D,                   NoSymbol,                U2102,                   U211C                 ] };
+    	symbols[Group1] = [ r,                       R,                       Greek_rho,               U03F1,                   U211D,                   NoSymbol,                NoSymbol,                   U211C                 ] };
     key <AD05> {
     	symbols[Group1] = [ t,                       T,                       Greek_tau,               Greek_TAU,               U22A4,                   U22A5,                   NoSymbol,                trademark                ] };
 
     key <AD06> {
-    	symbols[Group1] = [ z,                       Z,                       Greek_zeta,              NoSymbol,                U2124,                   U2124,                   NoSymbol,                U2128                 ] };
+    	symbols[Group1] = [ z,                       Z,                       Greek_zeta,              NoSymbol,                U2124,                   NoSymbol,                NoSymbol,                U2128                 ] };
     key <AD07> {
     	symbols[Group1] = [ u,                       U,                       Greek_theta,             Greek_THETA,             U221E,                   U27E9,                   NoSymbol,                U03D1                 ] };
     key <AD08> {
@@ -151,11 +161,11 @@ xkb_symbols "basis" {
     	symbols[Group1] = [ p,                       P,                       Greek_pi,                Greek_PI,                U220F,                   variation,               NoSymbol,                NoSymbol                 ] };
 
     key <AD11> {
-    	symbols[Group1] = [ bracketleft,             braceleft,               udiaeresis,             Udiaeresis,               U25AA,                   variation,               Greek_finalsmallsigma,   NoSymbol,                NoSymbol                 ] };
+    	symbols[Group1] = [ bracketleft,             braceleft,               udiaeresis,             Udiaeresis,               U25AA,                   NoSymbol,                Greek_finalsmallsigma,   NoSymbol                 ] };
 
     key.type[Group1] = "EIGHT_LEVEL";
     key <AD12> {
-    	symbols[Group1] = [ bracketright,            braceright,              asciitilde,              NoSymbol,                 22C5,                    plusminus,               dead_breve,              NoSymbol                 ] };
+    	symbols[Group1] = [ bracketright,            braceright,              asciitilde,              plusminus,               U22C5,                    plusminus,               dead_breve,              NoSymbol                 ] };
 
     // Middle row
     // --------------------------------------------------------------
@@ -163,7 +173,7 @@ xkb_symbols "basis" {
     key <AC01> {
     	symbols[Group1] = [ a,                       A,                       Greek_alpha,             Greek_ALPHA,             U2221,                   U2222,                   NoSymbol,                U212B                 ] };
     key <AC02> {
-    	symbols[Group1] = [ s,                       S,                       Greek_sigma,             Greek_SIGMA,             U2211,                   NoSymbol,                integral,                U017F                    ] };
+    	symbols[Group1] = [ s,                       S,                       Greek_sigma,             Greek_SIGMA,             U2211,                   NoSymbol,                NoSymbol,                U017F                    ] };
     key <AC03> {
     	symbols[Group1] = [ d,                       D,                       Greek_delta,             Greek_DELTA,             partialderivative,       nabla,                   U2300,                  NoSymbol                 ] };
     key <AC04> {
@@ -213,7 +223,7 @@ xkb_symbols "basis" {
     	symbols[Group1] = [ slash,                   question,                endash,                  emdash,                  U2212,                   U2213,                   hyphen,                  U2015                    ] };
     key.type[Group1] = "EIGHT_LEVEL";
     key <AB11> {
-        symbols[Group1] = [ ISO_Level5_Shift,              apostrophe,              rightdoublequotemark,    leftsinglequotemark,     at,                      Greek_upsilon,           nabla,                   NoSymbol                 ] };
+        symbols[Group1] = [ ISO_Level5_Shift,      apostrophe,              rightdoublequotemark,    leftsinglequotemark,     at,                      Greek_upsilon,           nabla,                   NoSymbol                 ] };
 
 
     // Space key
