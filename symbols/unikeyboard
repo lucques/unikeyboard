@@ -36,11 +36,12 @@ partial modifier_keys xkb_symbols "modifiers" {
         symbols[Group1] = [ Alt_R ]
     };
 
+    // The following is disabled.
     // RCTL -> ISO_Level5_Shift
-    key <RCTL> {
-        type[Group1]="ONE_LEVEL",
-        symbols[Group1] = [ ISO_Level5_Shift ]
-    };
+    //key <RCTL> {
+    //    type[Group1]="ONE_LEVEL",
+    //    symbols[Group1] = [ ISO_Level5_Shift ]
+    //};
 
     // CAPS -> ISO_Level3_Shift
     key <CAPS> {
@@ -85,7 +86,7 @@ xkb_symbols "basis" {
 	// Level 2: Shift 			shift 				A-Z
 	// Level 3: Mod1 			AltGr 				α-ω
 	// Level 4: Mod1+Shift 		AltGr+Shift 		Α-Ω
-	// Level 5: Mod2			Cpas 				∡-∮
+	// Level 5: Mod2			Caps 				∡-∮
 	// Level 6: Mod2+Shift		Caps+Shift 			∢-∯
 	// Level 7: Mod1+Mod2		AltGr+Caps 			⌀-∰
 	// Level 8: Mod1+Mod2+Shift AltGr+Caps+Shift
@@ -193,7 +194,7 @@ xkb_symbols "basis" {
     key <AC11> {
     	symbols[Group1] = [ apostrophe,              quotedbl,                adiaeresis,              Adiaeresis,              rightarrow,              U21D2,                   U21A6,                   NoSymbol                 ] };
     key <BKSL> {
-    	symbols[Group1] = [ ISO_Level5_Shift,        apostrophe,              rightdoublequotemark,    leftsinglequotemark,     at,                      Greek_upsilon,           nabla,                   NoSymbol                 ] };
+    	symbols[Group1] = [ ISO_Level5_Shift,        NoSymbol,                NoSymbol,                NoSymbol,                NoSymbol,                NoSymbol,           NoSymbol,                NoSymbol                 ] };
 
 
 
